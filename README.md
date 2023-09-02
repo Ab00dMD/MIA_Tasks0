@@ -8,9 +8,12 @@ Get familiar with electrical design software.
 analyze and design some circuits, and Design a simple H-bridge driver to control the direction of the DC motor using transistors.
  
 ### Task 3: About Arduino and its circuits  
-more about arduino and communications protocals.  
+more about Arduino and communications protocols.  
 Design an Arduino circuit using TinkerCAD software.  
 Dealing with ultrasonic sensors.  
-Get more about how to localize robot in an unknown environment and reach a specific position.
+Get more about how to localize a robot in an unknown environment and reach a specific position.
 
 ### Task 4: About OOP and an introduction to ML
+more about OOP concepts.  
+Dealing with Python libraries like pandas, numpy, and matplotlib.  
+Create and Train the Linear Regression Model
