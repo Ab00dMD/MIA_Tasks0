@@ -16,4 +16,4 @@ Get more about how to localize a robot in an unknown environment and reach a spe
 ### Task 4: About OOP and an introduction to ML
 more about OOP concepts.  
 Dealing with Python libraries like pandas, numpy, and matplotlib.  
-Create and Train the Linear Regression Model
+Create and Train a Linear Regression Model
