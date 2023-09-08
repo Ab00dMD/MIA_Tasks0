@@ -1,5 +1,5 @@
 ### Q1:what type of filter could used and what is the recommended cutoff frequency depending on the sensor datasheet?
- ==> We could use low-pass-filter(LPF) with cutoff frequency = 0.707 * 256 = 181 
+ ==> We could use low-pass-filter(LPF) with cutoff frequency = 0.707 * 256 = 181  
  // NOTE: Gyro Bandwidth of DLPF_CFG @ 0 is 256
 ### Documentation
 ```cpp
