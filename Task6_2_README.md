@@ -35,3 +35,65 @@ To determine the proper cutoff frequency (fc) for our Low-Pass Filter (LPF), we 
 This calculated cutoff frequency is approximately 214.968 Hz.
 
 ### Documentation
+``` cpp
+/*
+   Rotary Encoder Pulse Counting
+
+   This code interfaces with a rotary encoder and counts pulses from the A and B signals.
+   It uses interrupts to detect changes in the encoder signals and increments or decrements
+   a counter based on the rotation direction.
+
+   Encoder Pins:
+   - A phase of the encoder is connected to digital pin 2 (PinA).
+   - B phase of the encoder is connected to digital pin 3 (PinB).
+
+   The count of pulses is printed to the serial monitor.
+
+   Hardware Setup:
+   - Ensure that the encoder is properly connected to the specified pins.
+   - Connect GND and VCC of the encoder to ground and 5V, respectively.
+*/
+
+// Define constants for the encoder pins
+#define PinA 2  // Connect A phase of encoder to digital pin 2
+#define PinB 3  // Connect B phase of encoder to digital pin 3
+
+// Counter for encoder pulses
+long unsigned int count = 0;
+
+void setup() {
+  // Initialize the serial communication at 9600 baud rate
+  Serial.begin(9600);
+
+  // Set the pins as inputs with internal pull-up resistors
+  pinMode(PinA, INPUT_PULLUP);
+  pinMode(PinB, INPUT_PULLUP);
+
+  // Attach interrupts to handle changes on both A and B phases
+  attachInterrupt(digitalPinToInterrupt(PinA), handleEncoderA, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PinB), handleEncoderB, CHANGE);
+}
+
+void loop() {
+  Serial.println(count);
+  // Add a delay to control the rate of printing
+  delay(50);
+}
+
+// Interrupt service routine for handling changes on A phase
+void handleEncoderA() {
+  if (digitalRead(PinA) != digitalRead(PinB))
+    count++;  // Increment count for clockwise rotation
+  else
+    count--;  // Decrement count for counterclockwise rotation
+}
+
+// Interrupt service routine for handling changes on B phase
+void handleEncoderB() {
+  if (digitalRead(PinA) == digitalRead(PinB))
+    count++;  // Increment count for clockwise rotation
+  else
+    count--;  // Decrement count for counterclockwise rotation
+}
+```
+
