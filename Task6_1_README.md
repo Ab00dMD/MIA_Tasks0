@@ -1,6 +1,6 @@
 ### Q1:what type of filter could used and what is the recommended cutoff frequency depending on the sensor datasheet?
-### ==> We could use low-pass-filter(LPF) with cutoff frequency = 
-
+ ==> We could use low-pass-filter(LPF) with cutoff frequency = 0.707 * 256 = 181
+### Documentation
 ```cpp
 #include <Wire.h>
 
